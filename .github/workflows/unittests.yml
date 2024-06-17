@@ -24,8 +24,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt  # Установка зависимостей проекта
+          pip install -r requirements.txt  
 
       - name: Run tests
-        run: |
-          python -m unittest discover -s tests -p "test_*.py"
+        
+          run: |
+          python -m unittest discover -s library_manager/tests -p "test_*.py"
+        working-directory: ${{ github.workspace }}
